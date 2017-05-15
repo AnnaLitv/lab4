@@ -11,7 +11,6 @@ public class Main {
         StringBuffer myString = new StringBuffer(in.nextLine());
 
         Text s = new Text(myString);
-        //s.printing();
         s.textToGolos();
         s.Sort();
         s.print();
