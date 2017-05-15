@@ -14,6 +14,7 @@ public class Word {
         }
     }
 
+
     void printWord() {
         if (letts != null) {
             for (Letter letter : letts) {
@@ -27,7 +28,8 @@ public class Word {
     }
 
     char getTwoPositionValue() {
-        return this.letts[1].getLet();
+        return this.letts[0].getLet();
     }
+
 
 }

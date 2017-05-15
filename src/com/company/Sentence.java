@@ -7,6 +7,7 @@ public class Sentence {
     private Word[] sentenceMembers = null;
     private Delim delim = null;
     private StringBuffer[] golos = null;
+    private StringBuffer[] wods = new StringBuffer[1000];
 
     Sentence(StringBuffer str) {
         if (str.length() != 0) {
@@ -21,16 +22,13 @@ public class Sentence {
                     if (i - lastLexemeStart > 0) {
                         word = new StringBuffer(str.substring(lastLexemeStart, i));
                         sentenceMembers[lexemeCount] = new Word(word);
+                        wods[lexemeCount] = new StringBuffer(word);
                         lexemeCount++;
-                        if (isGolos(word)) {
-                            String st = new String(word);
-                            golos[golosLex] = new StringBuffer(st);
-                            golosLex++;
-                        }
                     }
                     lastLexemeStart = i + 1;
                 } else if (i == str.length() - 1) {
                     word = new StringBuffer(str.substring(lastLexemeStart, i + 1));
+                    wods[lexemeCount] = new StringBuffer(word);
                     sentenceMembers[lexemeCount] = new Word(word);
                 }
             }
@@ -38,24 +36,15 @@ public class Sentence {
 
     }
 
-    boolean isGolos(StringBuffer str) {
-        if ((str.length() != 1) && (str.charAt(0) == 97 || str.charAt(0) == 101 || str.charAt(0) == 105 || str.charAt(0) == 111 || str.charAt(0) == 117 || str.charAt(0) == 121)) {
-            return true;
-        }
-        return false;
+    public StringBuffer wordPosit(int pos) {
+        return wods[pos];
     }
 
-    /* void Sort(){
-        for(int p = 0; p < golosLex; ++p) {
-             for(int k = p + 1; k < golosLex; ++k) {
-                 if(golos[k].charAt(1) < golos[p].charAt(1)) {
-                     StringBuffer t = golos[p];
-                     golos[p] = golos[k];
-                     golos[k] = t;
-                 }
-             }
-         }
-     }*/
+    public int length() {
+        return sentenceMembers.length;
+    }
+
+    /* */
     void print() {
         for (int i = 0; i < golos.length; i++) {
             System.out.println(golos[i]);
