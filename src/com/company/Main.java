@@ -10,5 +10,8 @@ public class Main {
         System.out.println("Enter the string: ");
         StringBuffer myString = new StringBuffer(in.nextLine());
 
+        Sentence s = new Sentence(myString);
+        s.print();
+
     }
 }
