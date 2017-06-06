@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by Anna-PC on 14.05.2017.
+ * класс для разделительных знаков
  */
 public class Delim {
     private char deli;
@@ -10,7 +10,4 @@ public class Delim {
         this.deli = delim;
     }
 
-    char getDeli() {
-        return deli;
-    }
 }

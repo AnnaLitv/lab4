@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by Anna-PC on 14.05.2017.
+ * Класс для букв
  */
 public class Letter {
     private char let;
@@ -9,10 +9,5 @@ public class Letter {
     Letter(char wordElement){
         this.let = wordElement;
     }
-
-    char getLet(){
-        return let;
-    }
-
 
 }

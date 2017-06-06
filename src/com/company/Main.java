@@ -11,9 +11,9 @@ public class Main {
         StringBuffer myString = new StringBuffer(in.nextLine());
 
         Text s = new Text(myString);
-        s.textToGolos();
-        s.Sort();
-        s.print();
+        s.textToGolos(); //выделить гласные
+        s.Sort();//отсортировать
+        s.print();//вывести
 
     }
 }

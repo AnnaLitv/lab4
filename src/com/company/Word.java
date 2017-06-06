@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by Anna-PC on 14.05.2017.
+ * Класс для слов
  */
 public class Word {
     private Letter[] letts = null;
@@ -14,22 +14,6 @@ public class Word {
         }
     }
 
-
-    void printWord() {
-        if (letts != null) {
-            for (Letter letter : letts) {
-                System.out.print(letter.getLet());
-            }
-        }
-    }
-
-    int sizeOfWord() {
-        return this.letts.length;
-    }
-
-    char getTwoPositionValue() {
-        return this.letts[0].getLet();
-    }
 
 
 }
